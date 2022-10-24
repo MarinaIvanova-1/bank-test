@@ -24,6 +24,10 @@ class Statement {
   printHeader() {
     return 'date || credit || debit || balance'
   }
+
+  printStatement() {
+    return `${this.printHeader()}\n${this.printTransactions()}`
+  }
 }
 
 module.exports = Statement
