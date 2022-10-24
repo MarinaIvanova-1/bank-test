@@ -14,4 +14,11 @@ describe('Statement', () => {
     expect(statement.printTransactions()).toEqual('24/10/2022 || 100.00 || || 100.00')
   })
 
+  it('puts a debit transaction in a another column', () => {
+    const transaction1 = {value: -100, date: '24/10/2022'};
+    const account = {transactions: [transaction1]}
+    const statement = new Statement(account);
+    expect(statement.printTransactions()).toEqual('24/10/2022 || || 100.00 || -100.00')
+  })
+
 })

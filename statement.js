@@ -8,7 +8,12 @@ class Statement {
     let balance = 0
     this.account.transactions.forEach(transaction => {
       balance += transaction.value
-      transactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
+      if (transaction.value > 0) {
+        transactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
+      }
+      else {
+        transactionString = `${transaction.date} || || ${(transaction.value * -1).toFixed(2)} || ${balance.toFixed(2)}`
+      }
     })
     return transactionString
   }
