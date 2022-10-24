@@ -4,18 +4,21 @@ class Statement {
   }
 
   printTransactions() {
-    let transactionString = ''
     let balance = 0
+    let formattedTransactions = []
     this.account.transactions.forEach(transaction => {
+      let singleTransactionString = ''
       balance += transaction.value
       if (transaction.value > 0) {
-        transactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
+        singleTransactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
       }
       else {
-        transactionString = `${transaction.date} || || ${(transaction.value * -1).toFixed(2)} || ${balance.toFixed(2)}`
+        singleTransactionString = `${transaction.date} || || ${(transaction.value * -1).toFixed(2)} || ${balance.toFixed(2)}`
       }
+      formattedTransactions.unshift(singleTransactionString)
     })
-    return transactionString
+    
+    return formattedTransactions.join('\n')
   }
 
   printHeader() {
