@@ -1,6 +1,7 @@
 class Account {
   constructor() {
     this.transactions = []
+    this.balance = 0
   }
 
   addTransaction(transaction) {
@@ -9,6 +10,13 @@ class Account {
 
   showTransactions() {
     return this.transactions
+  }
+
+  calculateBalance() {
+    this.balance = this.transactions.reduce((sum, transaction) => {
+      return sum + transaction.value;
+    }, 0)
+    return this.balance
   }
 }
 

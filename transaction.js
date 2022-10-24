@@ -7,6 +7,7 @@ class Transaction {
 
   isDebit() {
     this.value = this.value * (-1)
+    this.debit = true
   }
 }
 

@@ -10,9 +10,19 @@ describe('Account', () => {
     const transaction1 = {};
     const transaction2 = {};
     const account = new Account();
-    expect(account.showTransactions()).toEqual([]);
     account.addTransaction(transaction1);
     account.addTransaction(transaction2);
     expect(account.showTransactions()).toEqual([transaction1, transaction2])
+  })
+
+  it('calculates balance when the transaction is made', () => {
+    const transaction1 = {value: 1000, debit: false};
+    const transaction2 = {value: 2000, debit: false};
+    const transaction3 = {value: -500, debit: true};
+    const account = new Account();
+    account.addTransaction(transaction1);
+    account.addTransaction(transaction2);
+    account.addTransaction(transaction3);
+    expect(account.calculateBalance()).toEqual(2500)
   })
 })
