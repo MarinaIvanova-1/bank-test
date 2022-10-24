@@ -1,5 +1,16 @@
-class PrintBalance {
-  constructor() {
+class Statement {
+  constructor(account) {
+    this.account = account
+  }
+
+  printTransactions() {
+    let transactionString = ''
+    let balance = 0
+    this.account.transactions.forEach(transaction => {
+      balance += transaction.value
+      transactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
+    })
+    return transactionString
   }
 
   printHeader() {
@@ -7,4 +18,4 @@ class PrintBalance {
   }
 }
 
-module.exports = PrintBalance
+module.exports = Statement
