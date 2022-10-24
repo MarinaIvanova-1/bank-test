@@ -16,9 +16,9 @@ describe('Account', () => {
   })
 
   it('calculates balance when the transaction is made', () => {
-    const transaction1 = {value: 1000, debit: false};
-    const transaction2 = {value: 2000, debit: false};
-    const transaction3 = {value: -500, debit: true};
+    const transaction1 = {value: 1000};
+    const transaction2 = {value: 2000};
+    const transaction3 = {value: -500};
     const account = new Account();
     account.addTransaction(transaction1);
     account.addTransaction(transaction2);
