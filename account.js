@@ -11,13 +11,6 @@ class Account {
   showTransactions() {
     return this.transactions
   }
-
-  calculateBalance() {
-    this.balance = this.transactions.reduce((sum, transaction) => {
-      return sum + transaction.value;
-    }, 0)
-    return this.balance
-  }
 }
 
 module.exports = Account;
