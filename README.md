@@ -1,8 +1,8 @@
-##Bank tech app###
+#Bank tech app
 
 This app allows the user or the bank to store bank transactions and produce a statement report with the dates and the balances after each transaction.
 
-#Installation:#
+##Installation:
 Download this repo and run 
 
 `npm install`
@@ -15,11 +15,11 @@ To run the program use node REPL
 
 `node`
 
-#For example of how to run the program see file run.js#
+##For example of how to run the program see file run.js
 
 ![screenshot](./example_screenshot.png)
 
-#Desription of the classes:#
+##Desription of the classes:
 
 The transactions are stored as instances of the Transaction class, each transaction has a value and a date. By default the transactions are deposits and have a positive value, in order to indicate that a transaction is a withdrawal, isDebit method should be applied to the given transaction.
 
@@ -28,4 +28,4 @@ All transactions are stored in a list in the instance of an Account class. To li
 The Statement class calculates the balance and displays the statement. To print the statement create a new instance of the Statement class and run printStatement method.
 
 
-#Have fun!#
+#Have fun!
