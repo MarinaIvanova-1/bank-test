@@ -17,7 +17,7 @@ describe('Transaction', () => {
     const transaction = new Transaction(300);
     const today = new Date();
     const todayDay = today.getDate();
-    let todayMonth = today.getMonth() + 1;
+    const todayMonth = today.getMonth() + 1;
     const todayYear = today.getFullYear()
     const formattedTodayDate = `${(todayDay<10 ? '0' : '')}${todayDay}/${(todayMonth<10 ? '0' : '')}${todayMonth}/${todayYear}`
     expect(transaction.date).toEqual(formattedTodayDate)
