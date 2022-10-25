@@ -12,4 +12,14 @@ describe('Transaction', () => {
     transaction1.isDebit()
     expect(transaction1.value).toEqual(-300)
   })
+
+  it("saves the new transactions with today's default date", () => {
+    const transaction = new Transaction(300);
+    const today = new Date();
+    const todayDay = today.getDate();
+    let todayMonth = today.getMonth() + 1;
+    const todayYear = today.getFullYear()
+    const formattedTodayDate = `${(todayDay<10 ? '0' : '')}${todayDay}/${(todayMonth<10 ? '0' : '')}${todayMonth}/${todayYear}`
+    expect(transaction.date).toEqual(formattedTodayDate)
+  })
 })

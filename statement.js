@@ -3,6 +3,10 @@ class Statement {
     this.account = account
   }
 
+  printHeader() {
+    return 'date || credit || debit || balance'
+  }
+  
   printTransactions() {
     let balance = 0
     let formattedTransactions = []
@@ -19,10 +23,6 @@ class Statement {
     })
     
     return formattedTransactions.join('\n')
-  }
-
-  printHeader() {
-    return 'date || credit || debit || balance'
   }
 
   printStatement() {
