@@ -8,13 +8,16 @@ class Transaction {
       const todayMonth = today.getMonth() + 1;
       const todayYear = today.getFullYear()
       const formattedTodayDate = `${(todayDay<10 ? '0' : '')}${todayDay}/${(todayMonth<10 ? '0' : '')}${todayMonth}/${todayYear}`
-      console.log(formattedTodayDate)
       this.date = formattedTodayDate
     }
   }
 
   isDebit() {
     this.value = this.value * (-1)
+  }
+
+  setDate(newDate) {
+    this.date = newDate
   }
 }
 
