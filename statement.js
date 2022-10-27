@@ -31,8 +31,7 @@ class Statement {
     // This formats the transaction strings to the desired format
     if (transaction.value > 0) {
       singleTransactionString = `${transaction.date} || ${transaction.value.toFixed(2)} || || ${balance.toFixed(2)}`
-    }
-    else {
+    } else {
       singleTransactionString = `${transaction.date} || || ${(transaction.value * -1).toFixed(2)} || ${balance.toFixed(2)}`
     }
     return singleTransactionString
