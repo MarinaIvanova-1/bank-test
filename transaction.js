@@ -15,7 +15,7 @@ class Transaction {
 
   // This method allows to change the transaction to a debit one
   isDebit() {
-    this.value = this.value * (-1)
+    this.value = Math.abs(this.value) * (-1)
   }
 
   // This method allows to change the date of an existing transaction 
