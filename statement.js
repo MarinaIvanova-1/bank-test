@@ -21,7 +21,6 @@ class Statement {
       // This adds individual transactions to the final array
       formattedTransactions.unshift(formattedTransaction)    
     })
-    
     // The method returns the string containing all transactions in the desired format
     return formattedTransactions.join('\n')
   }
@@ -36,7 +35,6 @@ class Statement {
     else {
       singleTransactionString = `${transaction.date} || || ${(transaction.value * -1).toFixed(2)} || ${balance.toFixed(2)}`
     }
-    
     return singleTransactionString
   }
 
