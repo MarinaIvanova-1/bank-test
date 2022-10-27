@@ -4,12 +4,12 @@ class Statement {
   }
 
   // This method prints a header of the statement
-  printHeader() {
+  #printHeader() {
     return 'date || credit || debit || balance'
   }
   
   // This method prints the transactions
-  printAllTransactions() {
+  #printAllTransactions() {
     // Starting balance is 0
     let balance = 0
     let formattedTransactions = []
@@ -17,7 +17,7 @@ class Statement {
       // Balance is updated after each transaction
       balance += transaction.value
       // This formats the transaction strings to the desired format
-      const formattedTransaction = this.printSingleTransaciton(transaction, balance)
+      const formattedTransaction = this.#printSingleTransaciton(transaction, balance)
       // This adds individual transactions to the final array
       formattedTransactions.unshift(formattedTransaction)    
     })
@@ -26,7 +26,7 @@ class Statement {
   }
   
   // This method prints individual transactions
-  printSingleTransaciton(transaction, balance) {
+  #printSingleTransaciton(transaction, balance) {
     let singleTransactionString = ''
     // This formats the transaction strings to the desired format
     if (transaction.value > 0) {
@@ -40,7 +40,7 @@ class Statement {
 
   // This method prints the full statement
   printStatement() {
-    return `${this.printHeader()}\n${this.printAllTransactions()}`
+    return `${this.#printHeader()}\n${this.#printAllTransactions()}`
   }
 }
 
