@@ -26,6 +26,7 @@ class Statement {
     return formattedTransactions.join('\n')
   }
   
+  // This method prints individual transactions
   printSingleTransaciton(transaction, balance) {
     let singleTransactionString = ''
     // This formats the transaction strings to the desired format
@@ -38,6 +39,7 @@ class Statement {
     
     return singleTransactionString
   }
+
   // This method prints the full statement
   printStatement() {
     return `${this.printHeader()}\n${this.printAllTransactions()}`

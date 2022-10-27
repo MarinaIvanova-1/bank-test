@@ -17,11 +17,6 @@ class Transaction {
   isDebit() {
     this.value = Math.abs(this.value) * (-1)
   }
-
-  // This method allows to change the date of an existing transaction 
-  setDate(newDate) {
-    this.date = newDate
-  }
 }
 
 module.exports = Transaction

@@ -22,11 +22,4 @@ describe('Transaction', () => {
     const formattedTodayDate = `${(todayDay<10 ? '0' : '')}${todayDay}/${(todayMonth<10 ? '0' : '')}${todayMonth}/${todayYear}`
     expect(transaction.date).toEqual(formattedTodayDate)
   })
-
-  xit('can update the date', () => {
-    const transaction = new Transaction(300); 
-    expect(transaction.date).toEqual('27/10/2022')
-    transaction.setDate('23/10/2022')
-    expect(transaction.date).toEqual('23/10/2022')
-  })
 })
